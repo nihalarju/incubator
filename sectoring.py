@@ -15,23 +15,23 @@ global verbose
 verbose = True
 
 def main():
-    nin = 10
+    nin = 30
     npc = 3
     SP500_all = pd.read_csv('tickers.csv')
     #len(SP500['Ticker']))
     shuffle(SP500_all["Ticker"])
-    SP500 = SP500_all[:10]
+    SP500 = SP500_all[:nin]
     print(SP500)
         
-#     history = pd.DataFrame()
-#     for ticker in SP500['Ticker']:
-#         qhandle = 'WIKI/'+ticker
-#         print(qhandle)
-#         history[ticker] = Quandl.get(qhandle)['Close']
-#         pass
-    #history.to_pickle('history.pkl')
+    history = pd.DataFrame()
+    for ticker in SP500['Ticker']:
+         qhandle = 'WIKI/'+ticker
+         print(qhandle)
+         history[ticker] = Quandl.get(qhandle)['Close']
+         pass
+    history.to_pickle('history30.pkl')
     
-    pd.from_pickle('history.pkl')
+#    history = pd.read_pickle('history.pkl')
     
     history = history.interpolate(method='linear', axis=1, limit=None)
     hm = np.array(history.values)
@@ -47,7 +47,13 @@ def main():
     for n in range(npc):
         pcn = phm[:,n]
         pp.plot(dateseries,pcn)
-        legend(['1', '2', '3'])
+        pp.legend(['1', '2', '3'])
+    pp.show()
+    
+    for n in range(npc):
+        hn = hm[:,n]
+        pp.plot(dateseries,hn)
+        pp.legend(['1', '2', '3'])
     pp.show()
     
     

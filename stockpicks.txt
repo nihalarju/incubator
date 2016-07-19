@@ -1,0 +1,33 @@
+   Ticker
+0     BSX
+1     PBI
+2    ISRG
+3    VRTX
+4     PLD
+5     JCI
+6     WMB
+7     RAI
+8     LLL
+9    WLTW
+10    KMI
+11     WM
+12     MA
+13    HIG
+14   MNST
+15   FISV
+16    XEC
+17    BCR
+18    DVA
+19    GPS
+20    AIZ
+21  CMCSA
+22    CXO
+23   MCHP
+24    KSU
+25    FMC
+26    NWS
+27    LYB
+28    AON
+29      V
+variance:  [ 0.51209124  0.64300504  0.75470999  0.84909781  0.90748386  0.9506067
+  0.97211274  0.98757578  0.99710539  1. 
